@@ -1,0 +1,12 @@
+Hecquet et Perche
+
+instance 1 : 932
+instance 2 : 1049
+instance 3 : 844
+instance 4 : 2032
+instance 5 : 621
+instance 6 : 907
+instance 7 : 585
+instance 8 : 1220
+instance 9 : 1091
+instance 10 : 642

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="dbDeliver2i">
+  <database-model serializer="dbm" dbms="DERBY" family-id="DERBY" format-version="4.17">
+    <root id="1">
+      <ServerVersion>10.14.1.0</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="APP"/>
+    <schema id="3" parent="1" name="CLEMENT">
+      <Current>1</Current>
+    </schema>
+    <schema id="4" parent="1" name="NULLID"/>
+    <schema id="5" parent="1" name="SQLJ"/>
+    <schema id="6" parent="1" name="SYS"/>
+    <schema id="7" parent="1" name="SYSCAT"/>
+    <schema id="8" parent="1" name="SYSCS_DIAG"/>
+    <schema id="9" parent="1" name="SYSCS_UTIL"/>
+    <schema id="10" parent="1" name="SYSFUN"/>
+    <schema id="11" parent="1" name="SYSIBM"/>
+    <schema id="12" parent="1" name="SYSPROC"/>
+    <schema id="13" parent="1" name="SYSSTAT"/>
+    <table id="14" parent="3" name="INSTANCE"/>
+    <table id="15" parent="3" name="INSTANCE_TOURNEE"/>
+    <table id="16" parent="3" name="SHIFT"/>
+    <table id="17" parent="3" name="SHIFT_TOURNEE"/>
+    <table id="18" parent="3" name="SOLUTION"/>
+    <table id="19" parent="3" name="SOLUTION_SHIFT"/>
+    <table id="20" parent="3" name="TOURNEE"/>
+    <column id="21" parent="14" name="INSTANCEID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="22" parent="14" name="DATE">
+      <Position>2</Position>
+      <DataType>TIMESTAMP|93s</DataType>
+    </column>
+    <column id="23" parent="14" name="DUREEMAX">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="24" parent="14" name="DUREEMIN">
+      <Position>4</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="25" parent="14" name="NOM">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="26" parent="14" name="SQL191203174018450">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INSTANCEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="14" name="SQL191203174018450">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INSTANCEID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="15" name="INSTANCE_INSTANCEID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="15" name="TOURNEELIST_TOURNEEID">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="30" parent="15" name="SQL191203174018520">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INSTANCE_INSTANCEID
+TOURNEELIST_TOURNEEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="31" parent="15" name="SQL191203174018670">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INSTANCE_INSTANCEID</ColNames>
+    </index>
+    <index id="32" parent="15" name="SQL191203174018650">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TOURNEELIST_TOURNEEID</ColNames>
+    </index>
+    <key id="33" parent="15" name="SQL191203174018520">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INSTANCE_INSTANCEID
+TOURNEELIST_TOURNEEID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="15" name="NSTNCTRNSTNCNSTNCD">
+      <ColNames>INSTANCE_INSTANCEID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>INSTANCE</RefTableName>
+      <RefKeyName>SQL191203174018450</RefKeyName>
+      <RefColNames>INSTANCEID</RefColNames>
+    </foreign-key>
+    <foreign-key id="35" parent="15" name="NSTNCTRNTRNLSTTRND">
+      <ColNames>TOURNEELIST_TOURNEEID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>TOURNEE</RefTableName>
+      <RefKeyName>SQL191203174018490</RefKeyName>
+      <RefColNames>TOURNEEID</RefColNames>
+    </foreign-key>
+    <column id="36" parent="16" name="SHIFTID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="37" parent="16" name="DUREEMAX">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="38" parent="16" name="DUREEMIN">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="39" parent="16" name="SOLUTIONID">
+      <Position>4</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="40" parent="16" name="SQL191203174018480">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SHIFTID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="41" parent="16" name="SQL191203174018600">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SOLUTIONID</ColNames>
+    </index>
+    <key id="42" parent="16" name="SQL191203174018480">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SHIFTID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="16" name="SHIFT_SOLUTIONID">
+      <ColNames>SOLUTIONID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>SOLUTION</RefTableName>
+      <RefKeyName>SQL191203174018510</RefKeyName>
+      <RefColNames>SOLUTIONID</RefColNames>
+    </foreign-key>
+    <column id="44" parent="17" name="SHIFT_SHIFTID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="17" name="TOURNEELIST_TOURNEEID">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="46" parent="17" name="SQL191203174018570">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SHIFT_SHIFTID
+TOURNEELIST_TOURNEEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="47" parent="17" name="SQL191203174018680">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SHIFT_SHIFTID</ColNames>
+    </index>
+    <index id="48" parent="17" name="SQL191203174018700">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TOURNEELIST_TOURNEEID</ColNames>
+    </index>
+    <key id="49" parent="17" name="SQL191203174018570">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SHIFT_SHIFTID
+TOURNEELIST_TOURNEEID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="50" parent="17" name="SHFTTRNESHFTSHFTID">
+      <ColNames>SHIFT_SHIFTID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>SHIFT</RefTableName>
+      <RefKeyName>SQL191203174018480</RefKeyName>
+      <RefColNames>SHIFTID</RefColNames>
+    </foreign-key>
+    <foreign-key id="51" parent="17" name="SHFTTRNTRNLSTTRNID">
+      <ColNames>TOURNEELIST_TOURNEEID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>TOURNEE</RefTableName>
+      <RefKeyName>SQL191203174018490</RefKeyName>
+      <RefColNames>TOURNEEID</RefColNames>
+    </foreign-key>
+    <column id="52" parent="18" name="SOLUTIONID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="53" parent="18" name="DUREETOTALETEMPSMORT">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="54" parent="18" name="INSTANCEID">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="55" parent="18" name="SQL191203174018510">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SOLUTIONID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="18" name="SQL191203174018630">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INSTANCEID</ColNames>
+    </index>
+    <key id="57" parent="18" name="SQL191203174018510">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SOLUTIONID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="58" parent="18" name="SOLUTIONINSTANCEID">
+      <ColNames>INSTANCEID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>INSTANCE</RefTableName>
+      <RefKeyName>SQL191203174018450</RefKeyName>
+      <RefColNames>INSTANCEID</RefColNames>
+    </foreign-key>
+    <column id="59" parent="19" name="SOLUTION_SOLUTIONID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="19" name="SHIFTLIST_SHIFTID">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="61" parent="19" name="SQL191203174018590">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SOLUTION_SOLUTIONID
+SHIFTLIST_SHIFTID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="62" parent="19" name="SQL191203174018730">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SOLUTION_SOLUTIONID</ColNames>
+    </index>
+    <index id="63" parent="19" name="SQL191203174018710">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SHIFTLIST_SHIFTID</ColNames>
+    </index>
+    <key id="64" parent="19" name="SQL191203174018590">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SOLUTION_SOLUTIONID
+SHIFTLIST_SHIFTID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="65" parent="19" name="SLTNSHFTSLTNSLTNID">
+      <ColNames>SOLUTION_SOLUTIONID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>SOLUTION</RefTableName>
+      <RefKeyName>SQL191203174018510</RefKeyName>
+      <RefColNames>SOLUTIONID</RefColNames>
+    </foreign-key>
+    <foreign-key id="66" parent="19" name="SLTNSHSHFTLSTSHFTD">
+      <ColNames>SHIFTLIST_SHIFTID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>SHIFT</RefTableName>
+      <RefKeyName>SQL191203174018480</RefKeyName>
+      <RefColNames>SHIFTID</RefColNames>
+    </foreign-key>
+    <column id="67" parent="20" name="TOURNEEID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="68" parent="20" name="HEUREDEBUT">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="69" parent="20" name="MINUTESDEBUT">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="70" parent="20" name="HEUREFIN">
+      <Position>4</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="71" parent="20" name="MINUTESFIN">
+      <Position>5</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="72" parent="20" name="INSTANCEID">
+      <Position>6</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <column id="73" parent="20" name="SHIFTID">
+      <Position>7</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="74" parent="20" name="SQL191203174018490">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TOURNEEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="75" parent="20" name="SQL191203174018620">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>INSTANCEID</ColNames>
+    </index>
+    <index id="76" parent="20" name="SQL191203174018621">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>SHIFTID</ColNames>
+    </index>
+    <key id="77" parent="20" name="SQL191203174018490">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>TOURNEEID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="78" parent="20" name="TOURNEE_INSTANCEID">
+      <ColNames>INSTANCEID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>INSTANCE</RefTableName>
+      <RefKeyName>SQL191203174018450</RefKeyName>
+      <RefColNames>INSTANCEID</RefColNames>
+    </foreign-key>
+    <foreign-key id="79" parent="20" name="FK_TOURNEE_SHIFTID">
+      <ColNames>SHIFTID</ColNames>
+      <RefSchemaName>CLEMENT</RefSchemaName>
+      <RefTableName>SHIFT</RefTableName>
+      <RefKeyName>SQL191203174018480</RefKeyName>
+      <RefColNames>SHIFTID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Jan 29 22:32:26 CET 2020:
+Amorçage de Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579) : instance a816c00e-016f-f338-3cc9-000009be8818 
+dans le répertoire de base de données /home/naysson/Travail/LA1/JPO/projet-poo-l3/Deliver2i/database avec le chargeur de classe sun.misc.Launcher$AppClassLoader@18b4aac2
+Chargé de file:/home/naysson/Travail/LA1/JPO/projet-poo-l3/lib_derby/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Private Build
+java.runtime.version=1.8.0_242-8u242-b08-0ubuntu3~18.04-b08
+user.dir=/home/naysson/Travail/LA1/JPO/projet-poo-l3/Deliver2i
+os.name=Linux
+os.arch=amd64
+os.version=5.0.0-37-generic
+derby.system.home=null
+Chargeur de classe de la base de données démarré - derby.database.classpath = ''

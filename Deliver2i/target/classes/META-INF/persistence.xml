@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="PersistanceUnitDeliver" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>modele.Horaire</class>
+    <class>modele.Instance</class>
+    <class>modele.Shift</class>
+    <class>modele.Tournee</class>
+    <class>modele.Solution</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby:/home/naysson/Travail/LA1/JPO/projet-poo-l3/Deliver2i/database"/>
+      <property name="javax.persistence.jdbc.user" value="clement"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+      <property name="javax.persistence.jdbc.password" value="clement"/>
+      <property name="javax.persistence.schema-generation.database.action" value="none"/>
+    </properties>
+  </persistence-unit>
+</persistence>
